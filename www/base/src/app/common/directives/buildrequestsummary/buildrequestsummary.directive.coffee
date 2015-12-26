@@ -16,6 +16,6 @@ class _buildrequestsummary extends Controller('common')
                 findBuilds $scope,
                     $scope.buildrequest.buildrequestid
 
-        data = dataService.open($scope)
+        data = dataService.open().closeOnDestroy($scope)
         data.getBuildrequests($scope.buildrequestid).then (buildrequests) ->
             $scope.buildrequest = buildrequests[0]

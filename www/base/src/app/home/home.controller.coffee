@@ -12,5 +12,5 @@ class Home extends Controller
                     $scope.recent.recent_builders = e.recent_builders
                     $scope.recent.recent_builds = e.recent_builds
 
-        data = dataService.open($scope)
+        data = dataService.open().closeOnDestroy($scope)
         $scope.builds_running = data.getBuilds(order: '-started_at', complete: false).getArray()
