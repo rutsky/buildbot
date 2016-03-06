@@ -6,6 +6,9 @@ machine:
     version: 2.7.11
 
 dependencies:
+  pre:
+    - sudo apt-get update
+    - sudo apt-get install libc-bin
   override:
     - pyenv global 2.7.11
     - export
